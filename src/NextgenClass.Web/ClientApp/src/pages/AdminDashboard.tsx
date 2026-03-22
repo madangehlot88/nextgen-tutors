@@ -49,7 +49,7 @@ export default function AdminDashboard() {
   }
 
   const tabStyle = (t: Tab) =>
-    `px-4 py-2 rounded-lg font-medium transition ${tab === t ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-100'}`
+    `px-4 py-2 rounded-lg font-medium transition ${tab === t ? 'bg-brand-blue text-white' : 'text-gray-600 hover:bg-gray-100'}`
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <img src="/logo.jpeg" alt="NextGen Coaching Classes" className="h-10 rounded" />
-            <span className="text-lg font-bold text-gray-900">Admin Dashboard</span>
+            <span className="text-lg font-bold text-brand-blue">Admin Dashboard</span>
           </div>
           <button onClick={logout} className="text-gray-600 hover:text-red-600 transition font-medium">Logout</button>
         </div>
@@ -69,15 +69,15 @@ export default function AdminDashboard() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
           <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
             <p className="text-sm text-gray-500">Total Tutors</p>
-            <p className="text-3xl font-bold text-blue-600">{stats.tutors}</p>
+            <p className="text-3xl font-bold text-brand-blue">{stats.tutors}</p>
           </div>
           <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
             <p className="text-sm text-gray-500">Total Students</p>
-            <p className="text-3xl font-bold text-green-600">{stats.students}</p>
+            <p className="text-3xl font-bold text-brand-orange">{stats.students}</p>
           </div>
           <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
             <p className="text-sm text-gray-500">Total Inquiries</p>
-            <p className="text-3xl font-bold text-purple-600">{stats.inquiries}</p>
+            <p className="text-3xl font-bold text-brand-gold">{stats.inquiries}</p>
           </div>
         </div>
 
@@ -92,21 +92,21 @@ export default function AdminDashboard() {
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-x-auto">
           {tab === 'tutors' && (
             <table className="w-full text-left">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-brand-blue/5 border-b border-gray-200">
                 <tr>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Name</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Contact</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Email</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Subject</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Experience</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Class</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Date</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500"></th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Name</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Contact</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Email</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Subject</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Experience</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Class</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Date</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {tutors.map(t => (
-                  <tr key={t.id} className="hover:bg-gray-50">
+                  <tr key={t.id} className="hover:bg-brand-blue/5">
                     <td className="px-4 py-3 text-sm text-gray-900">{t.name}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{t.contactNo}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{t.email}</td>
@@ -126,19 +126,19 @@ export default function AdminDashboard() {
 
           {tab === 'students' && (
             <table className="w-full text-left">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-brand-blue/5 border-b border-gray-200">
                 <tr>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Name</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Contact</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Class</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Subject</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Date</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500"></th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Name</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Contact</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Class</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Subject</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Date</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {students.map(s => (
-                  <tr key={s.id} className="hover:bg-gray-50">
+                  <tr key={s.id} className="hover:bg-brand-blue/5">
                     <td className="px-4 py-3 text-sm text-gray-900">{s.name}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{s.contactNo}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{s.className}</td>
@@ -156,19 +156,19 @@ export default function AdminDashboard() {
 
           {tab === 'inquiries' && (
             <table className="w-full text-left">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-brand-blue/5 border-b border-gray-200">
                 <tr>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Name</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Email</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Phone</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Message</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500">Date</th>
-                  <th className="px-4 py-3 text-sm font-medium text-gray-500"></th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Name</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Email</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Phone</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Message</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark">Date</th>
+                  <th className="px-4 py-3 text-sm font-medium text-brand-blue-dark"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {inquiries.map(i => (
-                  <tr key={i.id} className="hover:bg-gray-50">
+                  <tr key={i.id} className="hover:bg-brand-blue/5">
                     <td className="px-4 py-3 text-sm text-gray-900">{i.name}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{i.email}</td>
                     <td className="px-4 py-3 text-sm text-gray-600">{i.phone || '-'}</td>

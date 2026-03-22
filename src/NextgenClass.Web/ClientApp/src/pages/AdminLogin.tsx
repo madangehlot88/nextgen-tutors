@@ -25,7 +25,7 @@ export default function AdminLogin() {
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <img src="/logo.jpeg" alt="NextGen Coaching Classes" className="h-16 mx-auto mb-4 rounded" />
-          <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
+          <h1 className="text-2xl font-bold text-brand-blue">Admin Login</h1>
           <p className="text-gray-600 mt-1">NextGen Coaching Classes Administration</p>
         </div>
 
@@ -35,16 +35,16 @@ export default function AdminLogin() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Username</label>
             <input type="text" required value={username} onChange={e => setUsername(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue outline-none" />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
             <input type="password" required value={password} onChange={e => setPassword(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
+              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue outline-none" />
           </div>
 
-          <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          <button type="submit" className="w-full bg-brand-blue text-white py-3 rounded-lg font-semibold hover:bg-brand-blue-dark transition">
             Sign In
           </button>
         </form>

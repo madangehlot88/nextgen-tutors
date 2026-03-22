@@ -18,10 +18,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             {!isAdmin && (
               <>
-                <a href="#boards" className="text-gray-600 hover:text-blue-600 transition">Boards</a>
-                <a href="#contact" className="text-gray-600 hover:text-blue-600 transition">Contact</a>
-                <Link to="/register/tutor" className="text-gray-600 hover:text-blue-600 transition">Become a Tutor</Link>
-                <Link to="/register/student" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                <a href="#boards" className="text-gray-600 hover:text-brand-blue transition">Boards</a>
+                <a href="#contact" className="text-gray-600 hover:text-brand-blue transition">Contact</a>
+                <Link to="/register/tutor" className="text-gray-600 hover:text-brand-blue transition">Become a Tutor</Link>
+                <Link to="/register/student" className="bg-brand-orange text-white px-4 py-2 rounded-lg hover:bg-brand-orange-dark transition">
                   Register as Student
                 </Link>
               </>
@@ -48,7 +48,7 @@ export default function Navbar() {
                 <a href="#boards" className="block py-2 text-gray-600" onClick={() => setOpen(false)}>Boards</a>
                 <a href="#contact" className="block py-2 text-gray-600" onClick={() => setOpen(false)}>Contact</a>
                 <Link to="/register/tutor" className="block py-2 text-gray-600" onClick={() => setOpen(false)}>Become a Tutor</Link>
-                <Link to="/register/student" className="block py-2 text-blue-600 font-semibold" onClick={() => setOpen(false)}>Register as Student</Link>
+                <Link to="/register/student" className="block py-2 text-brand-orange font-semibold" onClick={() => setOpen(false)}>Register as Student</Link>
               </>
             )}
           </div>
