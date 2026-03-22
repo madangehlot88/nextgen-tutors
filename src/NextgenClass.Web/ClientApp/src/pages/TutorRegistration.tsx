@@ -25,16 +25,20 @@ export default function TutorRegistration() {
     }
   }
 
+  const inputClass = "w-full border border-gray-200 rounded-xl px-4 py-3 bg-gray-50/50 focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue focus:bg-white outline-none transition-all duration-200"
+
   if (submitted) {
     return (
       <div className="min-h-screen bg-gray-50">
         <Navbar />
-        <div className="max-w-lg mx-auto px-4 py-20 text-center">
-          <div className="bg-white p-10 rounded-xl shadow-sm border border-gray-200">
-            <div className="text-5xl mb-4">✅</div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Registration Successful!</h2>
-            <p className="text-gray-600 mb-6">Thank you for registering as a tutor. We'll review your profile and get in touch soon.</p>
-            <Link to="/" className="text-brand-blue font-semibold hover:underline">Back to Home</Link>
+        <div className="max-w-lg mx-auto px-4 py-24 text-center">
+          <div className="bg-white p-12 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100">
+            <div className="text-6xl mb-5">✅</div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Registration Successful!</h2>
+            <p className="text-gray-500 mb-8">Thank you for registering as a tutor. We'll review your profile and get in touch soon.</p>
+            <Link to="/" className="inline-flex items-center text-brand-blue font-semibold hover:underline">
+              ← Back to Home
+            </Link>
           </div>
         </div>
         <Footer />
@@ -46,56 +50,60 @@ export default function TutorRegistration() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <div className="max-w-2xl mx-auto px-4 py-12">
-        <h1 className="text-3xl font-bold text-brand-blue mb-2">Tutor Registration</h1>
-        <p className="text-gray-600 mb-8">Join our team of expert science tutors</p>
+        <div className="mb-8">
+          <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">Join Us</span>
+          <h1 className="text-3xl font-bold text-gray-900 mt-1">Tutor Registration</h1>
+          <p className="text-gray-500 mt-2">Join our team of expert science tutors</p>
+        </div>
 
-        <form onSubmit={handleSubmit} className="bg-white border border-gray-200 p-8 rounded-xl shadow-sm space-y-5">
-          {error && <p className="text-red-600 text-sm">{error}</p>}
+        <form onSubmit={handleSubmit} className="bg-white border border-gray-100 p-8 md:p-10 rounded-2xl shadow-xl shadow-gray-200/50 space-y-5">
+          {error && <p className="text-red-600 text-sm bg-red-50 p-3 rounded-xl">{error}</p>}
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1.5">Full Name *</label>
             <input type="text" required value={form.name} onChange={e => setForm({ ...form, name: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue outline-none" />
+              placeholder="Enter your full name" className={inputClass} />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Contact Number *</label>
+              <input type="tel" required value={form.contactNo} onChange={e => setForm({ ...form, contactNo: e.target.value })}
+                placeholder="+91 98765 43210" className={inputClass} />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email *</label>
+              <input type="email" required value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
+                placeholder="you@example.com" className={inputClass} />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Subject *</label>
+              <select required value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} className={inputClass}>
+                <option value="">Select Subject</option>
+                {subjects.map(s => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">Experience (Years) *</label>
+              <input type="number" required min={0} max={50} value={form.experienceYears}
+                onChange={e => setForm({ ...form, experienceYears: parseInt(e.target.value) || 0 })}
+                className={inputClass} />
+            </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Contact Number *</label>
-            <input type="tel" required value={form.contactNo} onChange={e => setForm({ ...form, contactNo: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue outline-none" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-            <input type="email" required value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue outline-none" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Subject *</label>
-            <select required value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue outline-none">
-              <option value="">Select Subject</option>
-              {subjects.map(s => <option key={s} value={s}>{s}</option>)}
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Experience (Years) *</label>
-            <input type="number" required min={0} max={50} value={form.experienceYears}
-              onChange={e => setForm({ ...form, experienceYears: parseInt(e.target.value) || 0 })}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue outline-none" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Class You Want to Teach *</label>
-            <select required value={form.classToTeach} onChange={e => setForm({ ...form, classToTeach: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue outline-none">
+            <label className="block text-sm font-semibold text-gray-700 mb-1.5">Class You Want to Teach *</label>
+            <select required value={form.classToTeach} onChange={e => setForm({ ...form, classToTeach: e.target.value })} className={inputClass}>
               <option value="">Select Class</option>
               {classes.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
 
-          <button type="submit" className="w-full bg-brand-orange text-white py-3 rounded-lg font-semibold hover:bg-brand-orange-dark transition">
+          <button type="submit"
+            className="w-full bg-gradient-to-r from-brand-blue to-brand-blue-light text-white py-3.5 rounded-xl font-semibold text-lg shadow-lg shadow-brand-blue/25 hover:shadow-xl hover:shadow-brand-blue/30 hover:-translate-y-0.5 transition-all duration-300">
             Register as Tutor
           </button>
         </form>

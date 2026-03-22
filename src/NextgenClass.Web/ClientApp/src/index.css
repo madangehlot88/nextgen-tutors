@@ -1,11 +1,65 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #1B5FAA;
-  --color-brand-blue-dark: #14477E;
-  --color-brand-blue-light: #2E86C1;
-  --color-brand-orange: #D4882B;
-  --color-brand-orange-dark: #B8721F;
-  --color-brand-orange-light: #E8A043;
-  --color-brand-gold: #D4A843;
+  --color-brand-blue: #1565C0;
+  --color-brand-blue-dark: #0D47A1;
+  --color-brand-blue-light: #42A5F5;
+  --color-brand-blue-50: #E3F2FD;
+  --color-brand-orange: #F57C00;
+  --color-brand-orange-dark: #E65100;
+  --color-brand-orange-light: #FFB74D;
+  --color-brand-orange-50: #FFF3E0;
+  --color-brand-gold: #FFA726;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modern base resets */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+/* Fade in up */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Subtle pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(21, 101, 192, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(21, 101, 192, 0.5); }
 }
