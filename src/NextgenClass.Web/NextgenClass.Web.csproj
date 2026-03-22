@@ -16,10 +16,4 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.*" />
   </ItemGroup>
 
-  <!-- Build React SPA on publish -->
-  <Target Name="BuildClientApp" BeforeTargets="Build" Condition="'$(Configuration)' == 'Release'">
-    <Exec WorkingDirectory="ClientApp" Command="npm install" />
-    <Exec WorkingDirectory="ClientApp" Command="npm run build" />
-  </Target>
-
 </Project>
