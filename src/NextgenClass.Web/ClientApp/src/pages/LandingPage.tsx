@@ -10,6 +10,8 @@ const boards = [
   { name: 'GSEB', desc: 'Gujarat Board science subjects with expert local tutors', color: 'from-orange-500 to-orange-700' },
   { name: 'JEE Mains & Advanced', desc: 'Physics, Chemistry & Math coaching for IIT aspirants', color: 'from-purple-500 to-purple-700' },
   { name: 'NEET', desc: 'Biology, Physics & Chemistry preparation for medical entrance', color: 'from-red-500 to-red-700' },
+  { name: 'Foundation', desc: 'Strong foundation building for Classes 6-10 in all science subjects', color: 'from-teal-500 to-teal-700' },
+  { name: 'Olympiad', desc: 'Specialized preparation for Science & Math Olympiad competitions', color: 'from-amber-500 to-amber-700' },
 ]
 
 export default function LandingPage() {
@@ -37,13 +39,15 @@ export default function LandingPage() {
       <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="text-center max-w-3xl mx-auto">
+            <img src="/logo.jpeg" alt="NextGen Coaching Classes" className="h-28 md:h-36 mx-auto mb-6 rounded-lg shadow-lg" />
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Nextgen Tutors<br />
-              <span className="text-blue-200">for Science</span>
+              NextGen Coaching Classes
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-10">
-              Expert science tutoring for all boards — CBSE, ICSE, GSEB, JEE & NEET.
-              Learn from experienced tutors and achieve your academic goals.
+            <p className="text-xl md:text-2xl text-blue-100 mb-4">
+              JEE | NEET | Foundation | Olympiad
+            </p>
+            <p className="text-lg text-blue-200 mb-10">
+              NextGen learning for Next-Level Results. Expert coaching for CBSE, ICSE, GSEB & competitive exams.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/register/student" className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-50 transition shadow-lg">
@@ -60,7 +64,7 @@ export default function LandingPage() {
       {/* Why Choose Us */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose Nextgen Tutors?</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose NextGen Coaching Classes?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: 'Expert Tutors', desc: 'Qualified and experienced science tutors handpicked for quality teaching.', icon: '🎓' },

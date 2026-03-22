@@ -24,11 +24,9 @@ export default function AdminLogin() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <span className="text-white font-bold text-lg">NG</span>
-          </div>
+          <img src="/logo.jpeg" alt="NextGen Coaching Classes" className="h-16 mx-auto mb-4 rounded" />
           <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
-          <p className="text-gray-600 mt-1">Nextgen Tutors Administration</p>
+          <p className="text-gray-600 mt-1">NextGen Coaching Classes Administration</p>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-white border border-gray-200 p-8 rounded-xl shadow-sm space-y-5">

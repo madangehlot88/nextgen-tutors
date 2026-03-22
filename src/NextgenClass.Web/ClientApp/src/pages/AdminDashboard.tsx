@@ -57,9 +57,7 @@ export default function AdminDashboard() {
       <header className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">NG</span>
-            </div>
+            <img src="/logo.jpeg" alt="NextGen Coaching Classes" className="h-10 rounded" />
             <span className="text-lg font-bold text-gray-900">Admin Dashboard</span>
           </div>
           <button onClick={logout} className="text-gray-600 hover:text-red-600 transition font-medium">Logout</button>

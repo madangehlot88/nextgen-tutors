@@ -6,13 +6,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">NG</span>
-              </div>
-              <span className="text-lg font-bold text-white">Nextgen Tutors</span>
+            <div className="flex items-center mb-4">
+              <img src="/logo.jpeg" alt="NextGen Coaching Classes" className="h-12 rounded" />
             </div>
-            <p className="text-sm">Expert science tutoring for CBSE, ICSE, GSEB, JEE Mains & Advanced, and NEET.</p>
+            <p className="text-sm">NextGen learning for Next-Level Results. Expert coaching for JEE, NEET, Foundation & Olympiad.</p>
           </div>
           <div>
             <h3 className="text-white font-semibold mb-3">Quick Links</h3>
@@ -30,11 +27,12 @@ export default function Footer() {
               <li>GSEB</li>
               <li>JEE Mains & Advanced</li>
               <li>NEET</li>
+              <li>Foundation & Olympiad</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Nextgen Tutors for Science. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NextGen Coaching Classes. All rights reserved.</p>
         </div>
       </div>
     </footer>
